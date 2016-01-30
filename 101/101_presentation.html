@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript 101</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+			.medium { font-size: 1.5em; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #c7c8c2;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+
+# JavaScript 101
+Jared Egan - Resilient Coders
+
+---
+layout: false
+
+# A Super Brief History of JavaScript
+
+.large[
+- It's not Java
+- Used on the browser
+- Can run on back end servers, called Node.js
+- Very popular
+- Very strange. Has "good & bad parts"
+]
+
+---
+
+# TODO: Give examples of browser side JavaScript.
+
+---
+
+# TODO: Examples on who uses Node.js, Walmart & PayPal
+
+---
+
+# Outline
+
+.large[
+- Just code & console
+- Types & Values
+- Variables
+- Operators & Comparisons
+- Control Structures: if, while, for
+- Arrays
+- Functions & Methods
+- Objects
+]
+
+// TODO: Turn this into an expanding list
+
+---
+
+# JSBin
+
+.large[
+Using JSBin.
+
+<a href="https://jsbin.com/?js,console">https://jsbin.com/?js,console</a>
+]
+
+---
+
+# Dive In
+
+Your first "expression".
+
+```javascript
+console.log('Hello, world!');
+```
+
+---
+
+# Dive In
+
+Your first "expression".
+
+```javascript
+console.clear();
+console.log('Hello, world!');
+```
+
+---
+
+# Variables
+
+Variables hold values, to be referenced later.
+
+```javascript
+var foo = 'Hello, world!';
+console.log(foo);
+
+foo = 'Goodbye, world!';
+console.log(foo);
+```
+
+---
+
+# Variables
+
+Variables hold values, to be referenced later.
+
+```javascript
+var foo = 'Hello, world!';
+var bar = foo;
+console.log(foo);
+console.log(bar);
+
+foo = 'Goodbye, world!';
+console.log(foo);
+console.log(bar);
+```
+
+---
+
+# Types & Values
+
+.medium[
+- Number
+- String ✓
+- Boolean
+- Object
+  - Function
+  - Array
+  - Date
+  - RegExp
+- null
+- undefined
+]
+
+
+---
+
+# Strings
+
+```javascript
+// Single quotes or double quotes work
+var foo = "Hello, World!";
+var bar = 'Hello, World!';
+
+// Use the backslash for special characters
+console.log('JavaScript\'s fun.');
+console.log('This is line one.\nThis is line two');
+```
+
+---
+
+# Comments
+
+Comments in code, for humans only.
+
+```javascript
+// This is a comment to myself.
+var foo = "Hello, World!";
+var bar = 'Hello, World!'; // It can be after a line of code.
+
+// Comment out code to stop it from running
+//console.log('JavaScript\'s fun.');
+//console.log('This is line one.\nThis is line two');
+
+/*
+Use this syntax...
+...if you have a longwinded comment, or to comment out a lot of code.
+
+Just remember to close it!
+*/
+```
+
+---
+
+# Numbers
+
+```javascript
+var foo = 4;
+console.log(foo);
+
+var bar = 1.5;
+console.log(bar);
+```
+
+---
+
+# Types & Values
+
+.medium[
+- Number ✓
+- String ✓
+- Boolean
+- Object
+  - Function
+  - Array
+  - Date
+  - RegExp
+- null
+- undefined
+]
+
+
+---
+
+# Operators
+
+`+`, `-`, `*`, `/` and `%`
+
+```javascript
+var foo = 4;
+console.log(foo);
+
+var bar = 1.5;
+console.log(bar);
+
+console.log(1 + 2);
+console.log(foo + bar);
+
+var result = foo * bar;
+console.log(result);
+```
+
+---
+template: inverse
+
+# Exercise #1
+Fahrenheit to Celsius
+
+---
+
+# Exercise #1
+
+Write a program that converts Fahrenheit temperatures into Celsius. Define a variable named `f`, and sets the value to `212`, to represent a Fahrenheit temperature. Store the calculated Celsius temperature into another variable named `c`. Print that variable with `console.log`
+
+To convert temperatures in degrees Fahrenheit to Celsius, subtract 32 and multiply by .5556.
+
+When `f` is set to `212`, the result should be `100.008` (Boiling)
+
+When `f` is set to `32`, the result should be `0` (Freezing)
+
+---
+
+# Exercise #1 Gotcha: Order of operation
+
+If you got `194.2208`...
+
+.medium[
+Math is evaluated in the following order:
+PEMDAS
+- Parentheses
+- Exponents
+- Multiplication
+- Division
+- Addition
+- Subtraction
+]
+
+---
+
+# '+' with strings
+
+Joins or "concatenates" two strings into one new string. AKA "concat".
+
+```javascript
+console.log('Hello, ' + 'Dave');
+
+// Works with variables
+var name = 'Jared';
+var greeting = 'Hello, ' + name;
+
+console.log(greeting);
+
+// JavaScript will do its best with non-strings
+var numberOfCats = 4;
+console.log('There are ' + numberOfCats + ' cats.');
+```
+
+---
+template: inverse
+
+# Exercise #2
+Variables, math & pizza.
+
+---
+
+# Exercise #2
+
+Write a program that defines 2 variables, `numOfPizzas` & `slicesPerPizza`. Set them to whatever numbers you'd like. Calculate the total number of slices and store that value into a new variable. (e.g. if there are 2 pizzas, with 6 slices per pizza, there are 12 slices total).
+
+Finally, print out the string: "There total number of slices is x"
+
+Or print everything: "There are x pizzas with y slices each, for a total of z slices."
+
+Remember:
+- JavaScript is case sensitive. `pizza` & `Pizza` are different.
+- Get one thing working at a time.
+
+---
+
+# Additional operators
+
+.large[
+`+=` and `-=`
+]
+
+```javascript
+var foo = 2;
+
+// These two lines do the same thing.
+foo = foo + 2;  // 4
+foo += 2;       // 6
+
+// Works with subtraction
+foo -= 2;       // 4
+```
+
+---
+
+# Additional operators
+
+.large[
+`++` and `--`
+]
+
+Increments or decrements a variable by 1.
+
+```javascript
+var foo = 2;
+
+foo++;
+
+console.log(foo); // 3
+```
+
+---
+
+# Comparisons - Equality
+
+.large[
+- `a === b` Is `a` equal to `b`?
+- `a !== b` Is `a` not equal to `b`?
+]
+
+Remember: `=` is for assignment. `===` is for comparison.
+
+---
+
+# Boolean
+
+.large[
+Either `true` or `false`.
+]
+
+```javascript
+var animal1 = 'cat';
+var animal2 = 'dog';
+
+var isCat = (animal1 === 'cat');
+console.log(isCat);
+
+isCat = (animal2 === 'cat');
+console.log(isCat);
+```
+
+---
+
+# Types & Values
+
+.medium[
+- Number ✓
+- String ✓
+- Boolean ✓
+- Object
+  - Function
+  - Array
+  - Date
+  - RegExp
+- null
+- undefined
+]
+ 
+---
+
+# Comparisons - Less than/Greater than
+
+.large[
+- `a < b` Is `a` less than `b`?
+- `a > b` Is `a` greater than `b`?
+- `>=` Greater than or equal to
+- `<=` Less than or equal to
+]
+
+---
+
+# Comparisons - Less than/Greater than
+
+```javascript
+console.log(4 < 3);    // false
+console.log(3 < 4);    // true
+console.log(4 > 4);    // false
+console.log(4 >= 4);    // true
+```
+
+---
+
+# Comparisons - A work of caution
+
+.large[
+`==` vs. `===`
+- TL;DR: In JavaScript, Always use `===`.
+]
+
+`==` does not check for type. So, `4 == '4'` returns `true`, even though `'4'` is a string, and `4` is a number.
+
+---
+
+# Control Structures
+
+.large[
+- `if`
+]
+
+---
+
+# `if`
+
+```javascript
+var sound = 'meow';
+
+if (sound === 'meow') {
+	console.log('It\'s a cat!');
+}
+```
+
+Exercise: Change the value of `sound`, does anything print?
+
+---
+
+# `else`
+
+```javascript
+var sound = 'meow';
+
+if (sound === 'meow') {
+	console.log('It\'s a cat!');
+} else {
+	console.log('Not a cat.');
+}
+```
+
+---
+
+# `else`
+
+```javascript
+var sound = 'meow';
+
+if (sound === 'meow') {
+	console.log('It\'s a cat!');
+} else {
+	console.log('Not a cat.');
+}
+
+if (sound === 'woof') {
+	console.log('It\'s a dog!');
+} else {
+	console.log('Not a dog.');
+}
+```
+
+---
+
+# `else if`
+
+```javascript
+var sound = 'meow';
+
+if (sound === 'meow') {
+	console.log('It\'s a cat!');
+} else if (sound === 'woof') {
+	console.log('It\'s a dog!');
+} else {
+	console.log('Unknown animal sound.');
+}
+
+```
+
+---
+
+# Logical OR & AND
+
+.large[
+- `||` = OR
+- `&&` = AND
+]
+
+---
+
+# Logical OR `||`
+
+```javascript
+var sound = 'meow';
+
+if (sound === 'meow') {
+	console.log('It\'s a cat!');
+} else if (sound === 'woof') {
+	console.log('It\'s a dog!');
+} else if (sound === 'bark') {
+	console.log('It\'s a dog!');
+} else {
+	console.log('Unknown animal sound.');
+}
+
+```
+
+---
+
+# Logical OR `||`
+
+```javascript
+var sound = 'meow';
+
+if (sound === 'meow') {
+	console.log('It\'s a cat!');
+} else if (sound === 'woof' || sound === 'bark') {
+	console.log('It\'s a dog!');
+} else {
+	console.log('Unknown animal sound.');
+}
+
+```
+
+---
+
+# Logical AND `&&`
+
+```javascript
+var hungry = true;
+var haveFood = false;
+
+if (hungry && haveFood) {
+	console.log('Let\'s eat!');
+}
+
+```
+
+---
+
+# Logical AND `&&`
+
+```javascript
+var hungry = true;
+var haveFood = false;
+
+if (hungry && haveFood) {
+	console.log('Let\'s eat!');
+} else if (hungry && !haveFood) {
+	console.log('Let\'s go to a restaurant');
+} else if (!hungry && haveFood) {
+	console.log('Anyone want my food?');
+} else {
+	console.log('No food, no problem.');
+}
+
+```
+
+Exercise: Copy & paste this into JSBin, and change the values to get all the different messages to print.
+
+---
+template: inverse
+
+# Exercise #3
+Age
+
+---
+
+# Exercise #3
+
+Write a program that prints out 'Baby', 'Child', 'Teenager' or 'Adult' depending on the value of a variable you define named `age`.
+
+Rules: 
+
+- 0-4: Baby
+- 5-12: Child
+- 13-17: Teenager
+- 18 & up: Adult
+
+---
+
+# "Truthy" & "Falsey" values
+
+.medium[
+Expressions in conditionals don't have to be strictly `Booleans`.
+
+Falsey values:
+- `false`
+- `0`
+- Empty string (`''`)
+- `NaN` - "Not a number"
+- `null`
+- `undefined`
+
+Everything else evaluates to `true`
+]
+
+---
+
+# "Truthy" & "Falsey" values
+
+```javascript
+var foo; // Default value for a var is `undefined`
+
+if (foo) {
+	console.log('foo is true!');
+}
+
+foo = 'something';
+
+if (foo) {
+	console.log('foo is true!');
+}
+```
+---
+
+# Control Structures
+
+.large[
+- `if`, `else if`, `else`
+- loops: `while` & `for`
+]
+
+---
+
+# `while` loop
+
+A `while` loop evaluates a block of code over & over while the expression you give it is true.
+
+```javascript
+var i = 0;
+while (i < 10) {
+	console.log('i is: ' + i);
+	i++;
+}
+```
+
+Exercise: Remove the line `i++;`. What do you think will happen? Run the code.
+
+---
+
+# `while` loop
+
+
+```javascript
+var i = 0;
+var stop = false;
+while (!stop) {
+	console.log('i is: ' + i);
+	i++;
+	
+	if (i === 10) {
+		console.log('Stopping the loop.');
+		stop = true;
+	}
+}
+```
+
+---
+// TODO: While loop exercise
+
+---
+
+# `for` loop
+
+Similar to `while`, but allows you to specify control information in single line. More common.
+
+```javascript
+for (var i = 0; i < 10; i++) {
+  // Will execute 10 times
+}
+
+// Equivalent while loop:
+var i = 0;
+while (i < 10) {
+	console.log('i is: ' + i);
+	i++;
+}
+```
+
+---
+template: inverse
+
+# Exercise #4
+Basic loops
+
+---
+
+# Exercise #4
+
+Create a program that prints out "1 sheep", "2 sheep" all the way to "99 sheep". Solve this with a `while` loop, then solve it again with a `for` loop. 
+
+
+---
+
+
+
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
