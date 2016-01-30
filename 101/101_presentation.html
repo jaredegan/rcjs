@@ -814,6 +814,210 @@ Create a program that prints out "1 sheep", "2 sheep" all the way to "99 sheep".
 
 ---
 
+# Types & Values
+
+.medium[
+- Number ✓
+- String ✓
+- Boolean ✓
+- Object
+  - Function
+  - Array
+  - Date
+  - RegExp
+- null
+- undefined
+]
+
+---
+
+# Array
+
+.large[
+An object that holds a list of objects.
+]
+
+---
+
+# Array
+
+```javascript
+var a = new Array();
+a[0] = 'dog';
+a[1] = 'cat';
+a[2] = 'hen';
+a.length; // 3
+
+var a = ['dog', 'cat', 'hen'];
+a.length; // 3
+```
+
+---
+
+# Array
+
+```javascript
+var a = new Array();
+a[0] = 'dog';
+a[1] = 'cat';
+a[2] = 'hen';
+console.log(a.length); // 3
+
+var a = ['dog', 'cat', 'hen'];
+console.log(a.length); // 3
+```
+
+.medium[
+`length` is a **property** the returns the total number of objects.
+
+It's always one more than the highest index.
+]
+
+---
+template: inverse
+
+# Exercise #5
+Looping through an array
+
+---
+
+# Exercise #5
+
+Make array of strings of different animal names.
+
+Loop through the array and print out all the names.
+
+Bonus: Print out the word "meow" if the animal is a cat.
+
+---
+
+# Exercise #5 Solution
+
+```javascript
+var animals = ['dog', 'cat', 'hen', 'cat', 'cow'];
+
+for (var i = 0; i < animals.length; i++) {
+	console.log(animals[i]);
+}
+```
+
+---
+
+# Types & Values
+
+.medium[
+- Number ✓
+- String ✓
+- Boolean ✓
+- Object
+  - Function
+  - Array ✓
+  - Date
+  - RegExp
+- null
+- undefined
+]
+
+---
+
+# Functions
+
+.medium[
+Functions are blocks of code.
+
+- Can take input
+- Can return a value
+- They are "invoked", "called" or "applied" using `()`
+- Makes code reusable
+- Can be stored in a variable
+- Can have "side effects"
+]
+
+---
+
+# Functions
+
+Basic function
+
+```javascript
+// Definition of the function
+function sayHello() {
+	console.log('Hello');
+}
+
+// Calling the function
+sayHello();
+```
+
+---
+
+# Functions
+
+Basic function
+
+```javascript
+// Definition of the function
+function sayHello() {
+	console.log('Hello');
+}
+
+// Calling the function
+sayHello();
+sayHello();
+sayHello();
+sayHello();
+```
+
+---
+
+# Functions
+
+Function that takes input and returns a value
+
+```javascript
+// Definition of the function
+function sayHello(name) {
+	return 'Hello, ' + name;
+}
+
+// Calling the function
+sayHello('Dave');
+sayHello('Jared');
+sayHello('Clarice');
+```
+
+---
+
+# Functions
+
+Function that takes input and returns a value
+
+```javascript
+// Definition of the function
+function sayHello(name) {
+	return 'Hello, ' + name;
+}
+
+// Calling the function
+var result = sayHello('Dave');
+console.log(result);
+
+console.log(sayHello('Clarice'));
+```
+
+---
+
+# Methods
+
+.large[
+**Methods** are **functions** associated with an object.
+
+You call them on an object.
+]
+
+---
+
+
 
 
 
