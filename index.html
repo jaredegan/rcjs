@@ -131,6 +131,24 @@ Jared Egan - Resilient Coders
 ---
 layout: false
 
+# This class
+
+We will be working with just code & a console on JSBin.com.
+
+.medium[
+<a href="https://jsbin.com/?js,console">Open JSBin here</a>.
+]
+
+Ensure the "JavaScript" & "Console" tabs are displayed.
+
+After editing your JavaScript, you can re-run it with the keyboard shortcut "Ctrl" + "Enter".
+
+I recommend having this presentation & the JSBin website in 2 tabs. Retype the code to drill it into your brain. Copy & paste if you must and if you get behind.
+
+If you fall behind on the exercises, <a href="https://github.com/jaredegan/rcjs"> find reference code (aka "the answers") here</a>. No looking ahead! You should try to solve the problems on your own first.
+
+---
+
 # A Super Brief History of JavaScript
 
 .large[
@@ -925,7 +943,7 @@ for (var i = 0; i < animals.length; i++) {
 .medium[
 Functions are blocks of code.
 
-- Can take input
+- Can take input (aka "arguments")
 - Can return a value
 - They are "invoked", "called" or "applied" using `()`
 - Makes code reusable
@@ -1007,6 +1025,21 @@ console.log(sayHello('Clarice'));
 
 ---
 
+template: inverse
+
+# Exercise #6
+Loop through array, call our function on each element.
+
+---
+
+# Exercise #6
+
+Create a `sayHello` function that takes a `name` argument and logs the phrase "Hello, {name}".
+
+Loop through our animals array and call that function with each element of the array.
+
+---
+
 # Methods
 
 .large[
@@ -1017,7 +1050,278 @@ You call them on an object.
 
 ---
 
+# String methods
 
+```javascript
+var str = 'I love JavaScript';
+var yelling = str.toUpperCase();
+
+console.log(str); // 'I love JavaScript'
+console.log(yelling); // 'I LOVE JAVASCRIPT'
+```
+
+---
+
+# String methods
+
+```javascript
+var str = 'I love JavaScript';
+var char = str.charAt(0);
+
+console.log(char); // 'I'
+
+char = str.charAt(3);
+console.log(char); // 'o'
+```
+
+---
+
+# String methods
+
+```javascript
+var str = 'I love JavaScript';
+var substr = str.substring(0, 6);
+
+console.log(substr); // 'I love'
+```
+
+---
+
+# Array methods
+
+```javascript
+var arr = ['one', 'two', 'three'];
+console.log(arr);
+
+arr.push('four'); // Adds a new item to arr
+console.log(arr);
+
+arr.pop(); // Removes the last item from arr
+console.log(arr);
+
+arr.reverse();
+console.log(arr);
+
+console.log(arr.includes('two')); // true
+```
+
+---
+
+template: inverse
+
+# Exercise #7
+Find a method, call it.
+
+---
+
+# Exercise #7
+
+Look up a list of methods for string or array objects. Try one out, see what it does.
+
+Hot tip: Google for "javascript string methods"
+
+---
+
+# Types & Values
+
+.medium[
+- Number ✓
+- String ✓
+- Boolean ✓
+- Object
+  - Function ✓
+  - Array ✓
+  - Date
+  - RegExp
+- null
+- undefined
+]
+
+---
+
+# Objects
+
+.medium[
+"In classic Object Oriented Programming, objects are collections of data and methods that operate on that data."
+
+JavaScript objects can be thought of as simple collections of name-value pairs. Like a dictionary. Given a "key" or "name", you get a value back.
+]
+
+---
+
+# Objects: A basic object
+
+Created with curly braces `{}`.
+
+```javascript
+var emptyObj = {};
+var person = {
+	firstName: 'Jimi',
+	lastName: 'Hendrix',
+	age: 27
+};
+
+// How to access values
+console.log(person.firstName); // preferred 
+console.log(person['firstName']);
+```
+
+---
+
+
+# Objects: A basic object
+
+```javascript
+var person = {
+	firstName: 'Jimi',
+	lastName: 'Hendrix',
+	age: 27
+};
+
+// How to access values
+console.log(person.firstName);
+
+// Set values
+person.firstName = 'Dave';
+console.log(person.firstName); // Dave
+```
+
+---
+
+
+# Objects: A basic object
+
+```javascript
+var person = {
+	firstName: 'Jimi',
+	lastName: 'Hendrix',
+	age: 27
+};
+
+// How to access values
+console.log(person.firstName);
+
+// Set values
+person.firstName = 'Dave';
+console.log(person.firstName); // Dave
+
+// Keys are arbitrary, because JS is loose
+person.favColor = 'Orange';
+console.log(person.favColor); // Orange
+
+console.log(person.firstName.toUpperCase()); // DAVE
+```
+
+---
+
+
+# Objects
+
+```javascript
+var person = {
+	firstName: 'Jimi',
+	lastName: 'Hendrix',
+	age: 27,
+	languages: ['JavaScript', 'HTML', 'Objective C'],
+	address: {
+		line1: '1 International Place',
+		city: 'Boston',
+		state: 'MA'
+	}
+};
+
+console.log(person.languages[1]); // HTML
+console.log(person.address.city); // Boston
+
+// Add 'Ruby' to languages array
+person.languages.push('Ruby');
+console.log(person.languages);
+```
+
+---
+template: inverse
+
+# Exercise #8
+Print a pretty description of a person object
+
+---
+
+# Exercise #8
+
+Create a function named `describePerson` that takes an argument named `person` and logs out a description of the object.
+
+Given this object:
+
+```javascript
+var person = {
+	firstName: 'Jimi',
+	lastName: 'Hendrix',
+	age: 27,
+	gender: 'male',
+	languages: ['JavaScript', 'HTML', 'Objective C'],
+	address: {
+		line1: '1 International Place',
+		city: 'Boston',
+		state: 'MA'
+	}
+};
+```
+
+The output may be:
+
+"Jimi Hendrix is 27 years old."
+"He lives at 1 International Place, Boston MA"
+"He knows JavaScript, HTML and Objective C"
+
+---
+
+# JavaScript Object Notation: JSON
+
+The data format is extremely popular. Used by most of the services you will consume.
+
+```javascript
+var person = {
+	firstName: 'Jimi',
+	lastName: 'Hendrix',
+	age: 27,
+	gender: 'male',
+	languages: ['JavaScript', 'HTML', 'Objective C'],
+	address: {
+		line1: '1 International Place',
+		city: 'Boston',
+		state: 'MA'
+	}
+};
+```
+
+---
+
+# JSON Example
+
+Instagram API response for user profile
+
+```javascript
+{
+    "data": {
+        "id": "1574083",
+        "username": "snoopdogg",
+        "full_name": "Snoop Dogg",
+        "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_1574083_75sq_1295469061.jpg",
+        "bio": "This is my bio",
+        "website": "http://snoopdogg.com",
+        "counts": {
+            "media": 1320,
+            "follows": 420,
+            "followed_by": 3410
+        }
+}
+```
+
+See more here:
+- <a href="https://www.instagram.com/developer/endpoints/users/">Instagram API Documentation</a>
+- <a href="https://dev.twitter.com/rest/public">Twitter API Documentation</a>
+
+---
 
 
 
